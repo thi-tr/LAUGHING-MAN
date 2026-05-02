@@ -2,8 +2,10 @@ const SQUARE_COUNT = 100;
 const TIMER_SPEED = 16.6;
 const SPEED = 5;
 document.addEventListener('DOMContentLoaded', ()=>{
-    document.querySelector("#square").addEventListener('click', ()=>{
-        alert("OMG YOU CLICKED ME");
+    const colorSquare = document.querySelector("#square");
+    colorSquare.addEventListener('mouseover', ()=>{
+        //alert("OMG YOU CLICKED ME");
+        colorSquare.style.backgroundColor = getColor();
     });
 
     let box = document.querySelector("#box");
@@ -15,6 +17,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
         square.src = "laughing_man.jpg";
         square.alt = "Catch the Laughing Man!";
         square.className = "square"
+
+        square.addEventListener('mouseover', ()=>{
+            square.src = "Orochimaru.jpg";
+        })
+        square.addEventListener('mouseout', ()=>{
+            square.src = "laughing_man.jpg";
+        })
+
         box.appendChild(square);
     }
    Array.from(box.children).forEach((element)=>{
