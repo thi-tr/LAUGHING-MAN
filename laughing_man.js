@@ -31,9 +31,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
             if(x <= 0 || x >= maxX){
                 dx *= -1;
+                element.style.borderColor = getColor();
             }
             if(y <= 0 || y >= maxY){
                 dy *= -1;
+                element.style.borderColor = getColor();
             }
 
             x += dx;
@@ -45,3 +47,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
 
 });
+
+function getColor(){
+    let r = Math.floor(Math.random()*256);
+    let g = Math.floor(Math.random()*256);
+    let b = Math.floor(Math.random()*256);
+    return `rgb(${r},${g},${b})`
+}
